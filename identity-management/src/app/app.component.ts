@@ -49,8 +49,15 @@ export class AppComponent {
       costcenter: "",
       department: "",
       startDate: new Date(),
-    }
+    };
   }
 
+  genIdentityAccountName(): void{
+    this.cmIdentity.accountname = `${this.cmIdentity.firstname}${this.cmIdentity.lastname.substring(0, 3)}`;
+  }
+    
+     
+    }
+  
 
-}
+

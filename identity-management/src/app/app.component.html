@@ -8,17 +8,17 @@
             <div class="row m-4">
                 <div class="col">
                     <label class="form-label" for="frmFirstname">Firstname:</label>
-                    <input class="form-control" type="text" id="frmFirstname" [(ngModel)]="cmIdentity.firstname">
+                    <input class="form-control" type="text" id="frmFirstname" [(ngModel)]="cmIdentity.firstname" (change)="genIdentityAccountName()">
                 </div>
                 <div class="col">
                     <label class="form-label" for="frmLastname">Lastname:</label>
-                    <input class="form-control" type="text" id="frmLastname" [(ngModel)]="cmIdentity.lastname">
+                    <input class="form-control" type="text" id="frmLastname" [(ngModel)]="cmIdentity.lastname" (change)="genIdentityAccountName()">
                 </div>
             </div>
             <div class="row m-4">
                 <div class="col">
                     <label class="form-label" for="frmAccountname">Account Name:</label>
-                    <input class="form-control" type="text" id="frmAccountname" [(ngModel)]="cmIdentity.accountname">
+                    <input class="form-control" type="text" id="frmAccountname" [(ngModel)]="cmIdentity.accountname" >
                 </div>
                 <div class="col">
                     <label class="form-label" for="frmPersonalNr">Personal Number:</label>
