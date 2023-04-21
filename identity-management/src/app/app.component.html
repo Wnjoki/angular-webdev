@@ -1,3 +1,30 @@
-<h1>{{title}}</h1>
-
-{{Identities}} {{Identities}}
+<div class="card">
+    <div class="card-header h1">
+        {{title}}
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Set of Identities</h3>
+      <div class="grid">
+        <div class="Row" *ngFor="let Identity of Identities">
+            <div class=""col>
+                <hr>
+                <div class="h5 mt-2" >
+                  Names:  {{Identity.firstname}}  {{Identity.lastname}}
+                </div>
+                <div  >
+                    Account:  {{Identity.accountname}},  PNr:{{Identity.personalnr}}
+                  </div>
+                  <div >
+                    Department:{{Identity.department}},  Costcenter:{{Identity.costcenter}}
+                  </div>
+                  <div >
+                    ContractBegin:{{Identity.startDate | date:"yyyy-MM-dd"}},  ContractEnd:{{Identity.endDate | date:"yyyy-MM-dd"}}
+                  </div>
+                
+            </div>
+        </div>
+      </div>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      
+    </div>
+  </div>
