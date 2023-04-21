@@ -8,81 +8,81 @@
             <div class="row m-4">
                 <div class="col">
                     <label class="form-label" for="frmFirstname">Firstname:</label>
-                    <input class="form-control" type="text" id="frmFirstname" >
+                    <input class="form-control" type="text" id="frmFirstname" [(ngModel)]="cmIdentity.firstname">
                 </div>
                 <div class="col">
                     <label class="form-label" for="frmLastname">Lastname:</label>
-                    <input class="form-control" type="text" id="frmLastname" >
+                    <input class="form-control" type="text" id="frmLastname" [(ngModel)]="cmIdentity.lastname">
                 </div>
             </div>
-                <div class="row m-4">
+            <div class="row m-4">
                 <div class="col">
                     <label class="form-label" for="frmAccountname">Account Name:</label>
-                    <input class="form-control" type="text" id="frmAccountname" >
+                    <input class="form-control" type="text" id="frmAccountname" [(ngModel)]="cmIdentity.accountname">
                 </div>
                 <div class="col">
                     <label class="form-label" for="frmPersonalNr">Personal Number:</label>
-                    <input class="form-control" type="number" id="frmPersonalNr" >
+                    <input class="form-control" type="number" id="frmPersonalNr" [(ngModel)]="cmIdentity.personalnr">
                 </div>
-                </div>
-                <div class="row m-4">
+            </div>
+            <div class="row m-4">
                 <div class="col">
                     <label class="form-label" for="frmDepartment">Department:</label>
-                    <input class="form-control" type="text" id="frmDepartment" >
+                    <input class="form-control" type="text" id="frmDepartment" [(ngModel)]="cmIdentity.department">
                 </div>
                 <div class="col">
                     <label class="form-label" for="frmCostcenter">Costcenter:</label>
-                    <input class="form-control" type="text" id="frmCostcenter" >
+                    <input class="form-control" type="text" id="frmCostcenter" [(ngModel)]="cmIdentity.costcenter">
                 </div>
-                </div>
-                <div class="row m-4">
+            </div>
+            <div class="row m-4">
                 <div class="col">
                     <label class="form-label" for="frmstartDate">Contract Begin:</label>
-                    <input class="form-control" type="date" id="frmstartDate" >
+                    <input class="form-control" type="date" id="frmstartDate" [(ngModel)]="cmIdentity.startDate">
                 </div>
                 <div class="col">
                     <label class="form-label" for="frmendDate">Contract End:</label>
-                    <input class="form-control" type="date" id="frmendDate" >
+                    <input class="form-control" type="date" id="frmendDate" [(ngModel)]="cmIdentity.endDate">
                 </div>
+            </div>
+            <div class="row m-4">
+                <div class="col">
+                    <button class="btn btn-primary" type="submit" (click)="addIdentity()">Submit</button>
                 </div>
-                <div class="row m-4">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Set of Identities</h3>
+            <div class="grid">
+                <div class="row" *ngFor="let Identity of Identities">
+                    <hr>
                     <div class="col">
-                    <button class="btn btn-primary" type="submit">Submit</button>   
+                        <div class="h5 mt-2">
+                            Names: {{Identity.firstname}} {{Identity.lastname}}
+                        </div>
+                        <div>
+                            Account: {{Identity.accountname}}, PNr:{{Identity.personalnr}}
+                        </div>
+                        <div>
+                            Department:{{Identity.department}}, Costcenter:{{Identity.costcenter}}
+                        </div>
+                        <div>
+                            ContractBegin:{{Identity.startDate | date:"yyyy-MM-dd"}}, ContractEnd:{{Identity.endDate |
+                            date:"yyyy-MM-dd"}}
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <button type="button" class="btn btn-danger" (click)="DeleteIdentity(Identity)">Delete</button>
+                    </div>
+
                 </div>
             </div>
-            
+            <p class="card-text"></p>
         </div>
     </div>
-
-<div class="card">
-    <div class="card-body">
-        <h3 class="card-title">Set of Identities</h3>
-        <div class="grid">
-            <div class="row" *ngFor="let Identity of Identities">
-                <hr>
-                <div class="col">
-                    <div class="h5 mt-2">
-                        Names: {{Identity.firstname}} {{Identity.lastname}}
-                    </div>
-                    <div>
-                        Account: {{Identity.accountname}}, PNr:{{Identity.personalnr}}
-                    </div>
-                    <div>
-                        Department:{{Identity.department}}, Costcenter:{{Identity.costcenter}}
-                    </div>
-                    <div>
-                        ContractBegin:{{Identity.startDate | date:"yyyy-MM-dd"}}, ContractEnd:{{Identity.endDate |
-                        date:"yyyy-MM-dd"}}
-                    </div>
-                </div>
-
-                <div class="col">
-                    <button type="button" class="btn btn-danger" (click)="DeleteIdentity(Identity)">Delete</button>
-                </div>
-
-            </div>
-        </div>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    </div>
-</div>
 </div>

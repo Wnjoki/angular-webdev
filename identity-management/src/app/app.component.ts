@@ -28,4 +28,29 @@ export class AppComponent {
   DeleteIdentity(MyIdentity: Identity): void {
     this.Identities = this.Identities.filter(i => i != MyIdentity)
   }
+
+  cmIdentity: Identity = {
+    firstname: "",
+    lastname: "",
+    accountname: "",
+    personalnr: Math.max(...this.Identities.map(o => o.personalnr)) + 1,
+    costcenter: "",
+    department: "",
+    startDate: new Date(),
+  };
+
+  addIdentity(): void {
+    this.Identities.push(this.cmIdentity)
+    this.cmIdentity = {
+      firstname: "",
+      lastname: "",
+      accountname: "",
+      personalnr: Math.max(...this.Identities.map(o => o.personalnr)) + 1,
+      costcenter: "",
+      department: "",
+      startDate: new Date(),
+    }
+  }
+
+
 }
