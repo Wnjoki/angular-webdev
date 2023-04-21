@@ -3,6 +3,59 @@
         {{title}}
     </div>
     <div class="card-body">
+        <h3 class="card-title">Insert Identity</h3>
+        <div class="grid">
+            <div class="row m-4">
+                <div class="col">
+                    <label class="form-label" for="frmFirstname">Firstname:</label>
+                    <input class="form-control" type="text" id="frmFirstname" >
+                </div>
+                <div class="col">
+                    <label class="form-label" for="frmLastname">Lastname:</label>
+                    <input class="form-control" type="text" id="frmLastname" >
+                </div>
+            </div>
+                <div class="row m-4">
+                <div class="col">
+                    <label class="form-label" for="frmAccountname">Account Name:</label>
+                    <input class="form-control" type="text" id="frmAccountname" >
+                </div>
+                <div class="col">
+                    <label class="form-label" for="frmPersonalNr">Personal Number:</label>
+                    <input class="form-control" type="number" id="frmPersonalNr" >
+                </div>
+                </div>
+                <div class="row m-4">
+                <div class="col">
+                    <label class="form-label" for="frmDepartment">Department:</label>
+                    <input class="form-control" type="text" id="frmDepartment" >
+                </div>
+                <div class="col">
+                    <label class="form-label" for="frmCostcenter">Costcenter:</label>
+                    <input class="form-control" type="text" id="frmCostcenter" >
+                </div>
+                </div>
+                <div class="row m-4">
+                <div class="col">
+                    <label class="form-label" for="frmstartDate">Contract Begin:</label>
+                    <input class="form-control" type="date" id="frmstartDate" >
+                </div>
+                <div class="col">
+                    <label class="form-label" for="frmendDate">Contract End:</label>
+                    <input class="form-control" type="date" id="frmendDate" >
+                </div>
+                </div>
+                <div class="row m-4">
+                    <div class="col">
+                    <button class="btn btn-primary" type="submit">Submit</button>   
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+<div class="card">
+    <div class="card-body">
         <h3 class="card-title">Set of Identities</h3>
         <div class="grid">
             <div class="row" *ngFor="let Identity of Identities">
@@ -31,4 +84,5 @@
         </div>
         <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
     </div>
+</div>
 </div>
